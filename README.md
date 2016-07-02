@@ -62,6 +62,11 @@ Debian, Ubuntu, RedHat, and CentOS.  The step by step instructions are as follow
 
 You can now access the CodeWorld system at http://localhost:8080.
 
+### Using a Docker container
+
+0. Run `make image` to create a Docker image named `codeworld`.
+1. Run `make shell` to start a build shell based on the `codeworld` image.
+
 Caveats
 -------
 
