@@ -62,6 +62,32 @@ Debian, Ubuntu, RedHat, and CentOS.  The step by step instructions are as follow
 
 You can now access the CodeWorld system at http://localhost:8080.
 
+### Setting up Vagrant development environment on Mac OS X
+
+A `Vagrantfile` configuration is provided for development on a Mac OS X host
+machine. This configuration provides settings for the following [Vagrant
+providers][vagrant-providers]:
+
+* VirtualBox
+* Parallels Desktop for Mac
+
+To create a Vagrant development environment:
+
+0. [Install Vagrant][vagrant-install].
+1. Create the Vagrant VM:
+  * Run `vagrant up --provider virtualbox` to create a VM using the VirtualBox
+provider.
+  * Run `vagrant up --provider parallels` to create a VM using the Parallels
+provider.
+2. Run `vagrant ssh` to log into the Vagrant VM.
+
+The Vagrant configuration should automatically change to the root directory of
+the project (`/vagrant`). At this point, you can run the `install.sh`,
+`build.sh` and `run.sh` scripts as described in the previous section. The
+Vagrant configuration also forwards port 8080 to port 8080 on the host machine
+so you can access the CodeWorld system at `http://localhost:8080` just as
+described above.
+
 Caveats
 -------
 
@@ -96,3 +122,6 @@ This creates a 2 GB swap file to increase available virtual memory.  Installatio
 a swap file may be slow, but it will succeed.  (Unless you intend to write very large
 programs in CodeWorld, it's usually safe to remove the swap file after running the
 server for the first time.)
+
+[vagrant-install]: https://www.vagrantup.com/downloads.html
+[vagrant-providers]: https://www.vagrantup.com/docs/providers/
